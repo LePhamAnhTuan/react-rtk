@@ -1,9 +1,9 @@
 import React from 'react';
-import { selectUser } from '../../features/auth/authSlice';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { getToken } from '../../lib/localStorage';
 const IsUserLogin = () => {
-	const user = useSelector(selectUser);
+	const user = getToken();
 	let navigate = useNavigate();
 	React.useEffect(() => {
 		if (user == null) {
@@ -11,7 +11,6 @@ const IsUserLogin = () => {
 		} else {
 			return navigate('/');
 		}
-		console.log('user: ', user);
 	}, [user]);
 	return <></>;
 };
