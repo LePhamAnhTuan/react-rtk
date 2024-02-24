@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Fragment } from 'react';
+import { Outlet } from 'react-router-dom';
 import Footer from './componentTemplate/Footer';
 import Header from './componentTemplate/Header';
-import { getToken } from '../lib/localStorage';
 
 const RootTemplate = () => {
 	return (
