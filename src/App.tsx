@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
+import '@/App.css';
 import Login from './features/auth';
 import HelloComponent from './features/helloapiSlice/helloComponent';
 import Room from './pages/room/room';
