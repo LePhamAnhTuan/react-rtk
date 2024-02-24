@@ -1,6 +1,5 @@
-import React from 'react';
-import { useGetHelloQuery } from './helloSlice';
 import Loading from '../../template/componentTemplate/Loading';
+import { useGetHelloQuery } from './helloSlice';
 
 function HelloComponent() {
 	const { data, isLoading } = useGetHelloQuery({});

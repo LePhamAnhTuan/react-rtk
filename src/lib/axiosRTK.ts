@@ -42,17 +42,17 @@ const axiosBaseQuery =
             }
         }
 
-const api = createApi({
-    baseQuery: axiosBaseQuery(),
+// const api = createApi({
+//     baseQuery: axiosBaseQuery(),
 
-    endpoints(build) {
-        return {
-            query: build.query({ query: () => ({ url: '/query', method: 'get' }) }),
-            mutation: build.mutation({
-                query: () => ({ url: '/mutation', method: 'post' }),
-            }),
-        }
-    },
-})
+//     endpoints(build) {
+//         return {
+//             query: build.query({ query: () => ({ url: '/query', method: 'get' }) }),
+//             mutation: build.mutation({
+//                 query: () => ({ url: '/mutation', method: 'post' }),
+//             }),
+//         }
+//     },
+// })
 
 export default axiosBaseQuery

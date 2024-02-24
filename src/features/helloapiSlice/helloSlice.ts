@@ -1,6 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/query/react"
 import axiosBaseQuery from "../../lib/axiosRTK"
-import { CustomAxiosResponse } from "../../common/constan"
+import { CustomAxiosResponse } from "../types/typeAxios"
 
 const helloSlice = createApi({
     baseQuery: axiosBaseQuery({
