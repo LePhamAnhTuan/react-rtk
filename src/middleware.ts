@@ -10,7 +10,7 @@ function isPayloadErrorMessage(payload: unknown): payload is {
     return typeof payload === 'object' && payload !== null && 'data' in payload && typeof (payload as any).data?.error === 'string'
 }
 
-export const rtkQueryErrorLogger: Middleware = () => (next: any) => (action: any) => {
+export const rtkQueryErrorLogger = () => (next: any) => (action: any) => {
     if (isRejected(action)) {
         if (action.error.name === 'CustomErros') {
             toast.warning(action.payload.message)
