@@ -1,4 +1,4 @@
-import { Middleware, MiddlewareAPI, isRejected, isRejectedWithValue } from "@reduxjs/toolkit";
+import { isRejected, isRejectedWithValue } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 function isPayloadErrorMessage(payload: unknown): payload is {
