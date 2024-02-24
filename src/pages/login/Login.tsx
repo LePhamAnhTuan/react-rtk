@@ -1,4 +1,3 @@
-import React from 'react';
 import CustomLogin from '../../features/auth';
 
 const Login = () => {

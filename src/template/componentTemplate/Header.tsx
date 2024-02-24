@@ -1,8 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-	const navgiate = useNavigate();
 	// const [updateLogin, { isLoading, data }] = useUpdateLoginMutation({
 	// 	fixedCacheKey: 'shared-update-login',
 	// });
