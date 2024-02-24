@@ -1,7 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/query/react"
-import { CustomAxiosResponse } from "../../common/constan"
 import axiosBaseQuery from "../../lib/axiosRTK"
-import { loadingStateType } from "../../types/initLoadingState.type"
+import { CustomAxiosResponse } from "../types/typeAxios";
 
 export type User = {
     email: string | null;
@@ -28,17 +27,7 @@ interface LoginResponse {
     }
 
 }
-interface AuthState extends loadingStateType {
-    user: UserResponse | null
-    token: string | null
-}
 
-const initialState: AuthState = {
-    loading: false,
-    error: null,
-    user: null,
-    token: null,
-}
 
 
 

@@ -13,10 +13,10 @@ const App = () => {
 				<Route path="/" element={<RootTemplate />}>
 					<Route index path="/login" element={<Login />} />
 					<Route path="room/:slug" element={<Room />} />
-					<Route path="/sp-ezy" element={<SpEzy />} />
 					<Route path="hello" element={<HelloComponent />} />
 				</Route>
 
+				<Route path="/sp-ezy" element={<SpEzy />} />
 				{/* notFound router */}
 				<Route path="*" element={<NotFound />}></Route>
 			</Routes>
