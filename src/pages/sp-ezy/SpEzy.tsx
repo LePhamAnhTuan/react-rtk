@@ -75,13 +75,20 @@ const SpEzy = () => {
 						<div className="border rounded-lg p-2 my-2">
 							<p>
 								số văn bản{' '}
-								<b>{parseInt(formData.sttTu) + index}</b> | số
-								xe : <b>{formData.sttDen}</b>
+								<b>
+									{formData.sttTu === ''
+										? '0'
+										: parseInt(formData.sttTu) + index}
+								</b>{' '}
+								| số xe : <b>{formData.sttDen}</b>
 							</p>
 							<p>
 								HĐ:{' '}
 								<b>
-									{parseInt(formData.sttTu) + index}/HĐVC
+									{formData.sttTu === ''
+										? '0'
+										: parseInt(formData.sttTu) + index}
+									/HĐVC
 									{formData.datePicker.split('/')}
 								</b>{' '}
 								| ngày <b>{formData.datePicker}</b>

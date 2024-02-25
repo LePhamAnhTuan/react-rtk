@@ -2,7 +2,6 @@ import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from './componentTemplate/Footer';
 import Header from './componentTemplate/Header';
-
 const RootTemplate = () => {
 	return (
 		<Fragment>
@@ -10,7 +9,7 @@ const RootTemplate = () => {
 				<div className="h-[60px]">
 					<Header />
 				</div>
-				<div className="min-h-screen">
+				<div className="min-h-screen py-4 px-8">
 					<Outlet />
 				</div>
 				<Footer />
