@@ -33,10 +33,10 @@ toaster.error = (
 // ...the other notification types
 
 // use it
-toaster.success(
-	{
-		title: 'You did it!',
-		text: 'Good job!',
-	},
-	{ autoClose: false },
-);
+// toaster.success(
+// 	{
+// 		title: 'You did it!',
+// 		text: 'Good job!',
+// 	},
+// 	{ autoClose: false },
+// );

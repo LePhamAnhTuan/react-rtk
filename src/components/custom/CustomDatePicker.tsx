@@ -13,7 +13,7 @@ import {
 	PopoverTrigger,
 } from '@/components/ui/popover';
 
-export function DatePicker({ pickDate }: { pickDate: any }) {
+export function DatePicker({ pickDate, id }: { pickDate: any; id: string }) {
 	const [date, setDate] = React.useState<Date>();
 	React.useEffect(() => {
 		pickDate(date);
@@ -22,6 +22,7 @@ export function DatePicker({ pickDate }: { pickDate: any }) {
 		<Popover>
 			<PopoverTrigger asChild>
 				<Button
+					id={id}
 					variant={'outline'}
 					className={cn(
 						'w-[240px] justify-start text-left font-normal',

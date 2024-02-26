@@ -1,5 +1,6 @@
 import { arrTime } from '@/common/constan';
 import { DatePicker } from '@/components/custom/CustomDatePicker';
+import { Button } from '@/components/ui/button';
 import moment from 'moment';
 import React from 'react';
 
@@ -66,13 +67,32 @@ const SpEzy = () => {
 				}
 			/>
 			<div className="my-4">
-				<DatePicker pickDate={setPickDate}></DatePicker>
+				<label htmlFor="date">Ngày nhập văn bản: </label>
+				<DatePicker pickDate={setPickDate} id="date"></DatePicker>
 			</div>
 
 			<div id="table1">
 				{arrTime.map((item, index) => {
+					const [isHidden, setIsHidden] = React.useState(false);
 					return (
-						<div className="border rounded-lg p-2 my-2">
+						<div
+							className={`border rounded-lg p-2 my-4  ${isHidden ? 'bg-slate-100 text-slate-200' : 'block'}`}
+							onSelect={() => {
+								console.log('first');
+							}}
+							key={index++}
+						>
+							{' '}
+							<Button
+								key={index}
+								onClick={() => {
+									setIsHidden(!isHidden);
+								}}
+								variant={isHidden ? 'default' : 'btnNone'}
+								// className={`${isHidden && 'bg-slate-800 hover:bg-slate-700'}`}
+							>
+								{!isHidden ? 'Ẩn' : 'Hiện'}
+							</Button>
 							<p>
 								số văn bản{' '}
 								<b>
