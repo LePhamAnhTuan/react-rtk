@@ -1,6 +1,7 @@
 import { arrTime } from '@/common/constan';
 import { DatePicker } from '@/components/custom/CustomDatePicker';
 import { Button } from '@/components/ui/button';
+import { InputCopy } from '@/components/ui/inputCopy';
 import moment from 'moment';
 import React from 'react';
 
@@ -34,7 +35,13 @@ const SpEzy = () => {
 			datePicker: moment(pickDate).format('DD/MM/YYYY').toString(),
 		});
 	}, [pickDate]);
-
+	const renderHDVC = ({ index }: any) => {
+		const stt =
+			formData.sttTu === '' ? '0' : parseInt(formData.sttTu) + index;
+		const ngayHD = formData.datePicker.split('/').join('');
+		const result = `${stt}/HĐVC${ngayHD}`;
+		return result;
+	};
 	return (
 		<div className="w-full h-screen p-10">
 			<label htmlFor="sttTu">Số thứ tự từ</label>
@@ -74,6 +81,9 @@ const SpEzy = () => {
 			<div id="table1">
 				{arrTime.map((item, index) => {
 					const [isHidden, setIsHidden] = React.useState(false);
+					if (index === arrTime.length - 1) {
+						return null;
+					}
 					return (
 						<div
 							className={`border rounded-lg p-2 my-4  ${isHidden ? 'bg-slate-100 text-slate-200' : 'block'}`}
@@ -93,35 +103,76 @@ const SpEzy = () => {
 							>
 								{!isHidden ? 'Ẩn' : 'Hiện'}
 							</Button>
-							<p>
+							<div>
 								số văn bản{' '}
-								<b>
-									{formData.sttTu === ''
-										? '0'
-										: parseInt(formData.sttTu) + index}
-								</b>{' '}
-								| số xe : <b>{formData.sttDen}</b>
-							</p>
-							<p>
+								<InputCopy
+									value={
+										formData.sttTu === ''
+											? '0'
+											: parseInt(formData.sttTu) + index
+									}
+									className="min-w-[100px] w-[100px]"
+								/>
+								| số xe :{' '}
+								<InputCopy
+									value={formData.sttDen}
+									className="w-[140px]"
+								/>
+							</div>
+							<div>
+								Hình thức:{' '}
+								<InputCopy value={'Đưa rước khách sân bay'} />
+							</div>
+							<div>
 								HĐ:{' '}
-								<b>
-									{formData.sttTu === ''
-										? '0'
-										: parseInt(formData.sttTu) + index}
-									/HĐVC
-									{formData.datePicker.split('/')}
-								</b>{' '}
-								| ngày <b>{formData.datePicker}</b>
-							</p>
-							<p>
-								<b>{item}</b> - <b>{arrTime[index + 1]}</b> đi
-								từ
+								<InputCopy
+									value={renderHDVC({ index })}
+									className="w-[200px]"
+								/>
+								| ngày{' '}
+								<InputCopy
+									value={formData.datePicker}
+									className="w-[150px]"
+								/>
+							</div>
+							<div>
+								Giờ :
+								<InputCopy
+									value={item}
+									className="w-[100px]"
+								/>{' '}
+								-{' '}
+								<InputCopy
+									value={arrTime[index + 1]}
+									className="w-[100px]"
+								/>{' '}
+								đi từ
 								{index % 2 === 0 ? (
-									<b> KS HOLIDAY INN đến SAN BAY</b>
+									<>
+										<InputCopy
+											value={'KS HOLIDAY INN'}
+											className="w-[170px]"
+										/>
+										đến
+										<InputCopy
+											value={'SAN BAY'}
+											className="w-[120px]"
+										/>
+									</>
 								) : (
-									<b> SAN BAY đến KS HOLIDAY INN</b>
+									<>
+										<InputCopy
+											value={'SAN BAY'}
+											className="w-[120px]"
+										/>
+										đến
+										<InputCopy
+											value={'KS HOLIDAY INN'}
+											className="w-[170px]"
+										/>
+									</>
 								)}
-							</p>
+							</div>
 							<p>số lượng khách: 1 | số cực ly : 8</p>
 						</div>
 					);
