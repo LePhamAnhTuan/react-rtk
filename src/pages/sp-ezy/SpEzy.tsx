@@ -120,10 +120,6 @@ const SpEzy = () => {
 								/>
 							</div>
 							<div>
-								Hình thức:{' '}
-								<InputCopy value={'Đưa rước khách sân bay'} />
-							</div>
-							<div>
 								HĐ:{' '}
 								<InputCopy
 									value={renderHDVC({ index })}
@@ -136,17 +132,7 @@ const SpEzy = () => {
 								/>
 							</div>
 							<div>
-								Giờ :
-								<InputCopy
-									value={item}
-									className="w-[100px]"
-								/>{' '}
-								-{' '}
-								<InputCopy
-									value={arrTime[index + 1]}
-									className="w-[100px]"
-								/>{' '}
-								đi từ
+								Lộ trình :
 								{index % 2 === 0 ? (
 									<>
 										<InputCopy
@@ -172,6 +158,18 @@ const SpEzy = () => {
 										/>
 									</>
 								)}
+							</div>
+							<div>
+								Giờ :
+								<InputCopy
+									value={item}
+									className="w-[100px]"
+								/>{' '}
+								-{' '}
+								<InputCopy
+									value={arrTime[index + 1]}
+									className="w-[100px]"
+								/>{' '}
 							</div>
 							<p>số lượng khách: 1 | số cực ly : 8</p>
 						</div>
